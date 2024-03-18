@@ -1,7 +1,7 @@
 import argparse
 import logging
-from data_loarder import DataLoader
-from data_saver import DataSaver
+from pipeline.data_loarder import DataLoader
+from pipeline.data_saver import DataSaver
 
 def main():
     parser = argparse.ArgumentParser(description="Document Processing Pipeline")
@@ -14,7 +14,7 @@ def main():
     logging.info("Loading data...")
     data = DataLoader(args.input_file)
 
-    # ouput
+    # ouput to your local dir
     logging.info("Outputting results...")
     DataSaver(data, args.output_file)
 
